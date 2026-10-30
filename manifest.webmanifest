@@ -1,0 +1,19 @@
+{
+  "name": "Human 3.0 Development OS",
+  "short_name": "Human 3.0",
+  "description": "A personal development dashboard across Mind, Body, Spirit and Vocation.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d1117",
+  "theme_color": "#11151b",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

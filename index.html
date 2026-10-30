@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#11151b">
+<meta name="description" content="Human 3.0 personal development dashboard. Assess, reflect, plan and track your growth across four quadrants.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Human 3.0 | Development OS</title>
+<style>
+:root{color-scheme:dark;--bg:#0d1117;--panel:#171e27;--panel2:#202a35;--line:#3b3b38;--gold:#d7bb7d;--gold2:#f0dba9;--muted:#aab2bc;--text:#f3eee3;--green:#8bb9a4;--blue:#83adc2;--rose:#c18ca8;--amber:#c8a56c;--danger:#d98b83;--radius:18px;--shadow:0 12px 35px #0005}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% -20%,#29313a 0%,#11161d 48%,#0b0f14 100%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding-bottom:calc(82px + env(safe-area-inset-bottom))}
+button,input,textarea,select{font:inherit}button{cursor:pointer}.shell{max-width:1100px;margin:auto;padding:16px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 2px 18px}.brand{display:flex;align-items:center;gap:11px}.crest{width:43px;height:43px;border:1px solid #a58a57;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px;box-shadow:inset 0 0 15px #d7bb7d22}.brand h1{font:700 23px/1 Georgia,serif;letter-spacing:2px;color:var(--gold2);margin:0}.brand small{color:var(--muted);letter-spacing:1.4px;font-size:9px}.top-actions{display:flex;gap:8px}.btn,.iconbtn{border:1px solid #63563e;background:#211f1a;color:var(--gold2);border-radius:12px;padding:10px 13px}.btn.primary{background:linear-gradient(135deg,#9e804a,#d7bb7d);color:#17130b;border:0;font-weight:750}.btn.ghost{background:#171e27;border-color:#414956;color:var(--text)}.btn.danger{border-color:#744c49;color:#e9a39b;background:#281c1d}.btn.small{padding:7px 10px;font-size:13px}.hero{display:grid;grid-template-columns:1.4fr .8fr;gap:14px;margin-bottom:16px}.card{background:linear-gradient(145deg,#1b242e,#141a22);border:1px solid #3a4149;border-radius:var(--radius);padding:17px;box-shadow:var(--shadow)}.hero-main{text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:190px}.eyebrow{font-size:11px;letter-spacing:1.8px;color:var(--gold);text-transform:uppercase}.score{font:700 clamp(46px,8vw,70px)/1 Georgia,serif;color:var(--gold2);margin:8px}.subtle{color:var(--muted)}.progress{height:9px;background:#343b44;border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;background:linear-gradient(90deg,#9b804d,#f0dba9);border-radius:20px}.hero-side{display:flex;flex-direction:column;justify-content:center;gap:10px}.statline{display:flex;justify-content:space-between;gap:8px;font-size:13px}.statline b{color:var(--gold2)}.section-head{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:23px 2px 11px}.section-head h2{font:700 20px Georgia,serif;color:var(--gold2);margin:0}.section-head p{margin:3px 0 0;color:var(--muted);font-size:12px}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.quad{padding:15px;border-radius:16px;background:linear-gradient(145deg,#202b35,#171e27);border:1px solid #3b4650}.quad-head{display:flex;align-items:center;gap:10px}.qicon{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;font-size:20px;background:#ffffff0a}.quad h3{margin:0;font:700 18px Georgia,serif}.qscore{margin-left:auto;font:700 23px Georgia,serif}.quad p{font-size:12px;color:var(--muted);min-height:34px;margin:8px 0}.qmeta{display:flex;justify-content:space-between;align-items:center;margin-top:9px;font-size:11px;color:var(--muted)}.tag{display:inline-flex;border:1px solid #64583e;color:var(--gold2);border-radius:30px;padding:3px 8px;font-size:10px;letter-spacing:.3px}.panel{background:#171e27;border:1px solid #39424c;border-radius:16px;padding:16px;margin-bottom:12px}.panel h3{margin:0 0 10px;color:var(--gold2);font:700 17px Georgia,serif}.formgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:12px;color:#d8c89f}.field input,.field textarea,.field select,textarea,input[type=text],input[type=date],select{width:100%;background:#0f151c;border:1px solid #46515c;border-radius:10px;padding:10px;color:var(--text);outline:none}.field input:focus,.field textarea:focus,.field select:focus,textarea:focus{border-color:var(--gold)}textarea{min-height:85px;resize:vertical}.range-row{display:flex;align-items:center;gap:10px}.range-row input{flex:1;accent-color:var(--gold)}.range-row output{width:42px;text-align:right;color:var(--gold2);font-weight:700}.tabs{position:fixed;z-index:20;bottom:0;left:0;right:0;background:#10161ded;backdrop-filter:blur(18px);border-top:1px solid #3b424a;display:flex;justify-content:center;padding:8px max(8px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}.tabs-inner{width:min(100%,700px);display:grid;grid-template-columns:repeat(7,1fr);gap:2px}.tab{background:none;border:0;color:#9ba5af;border-radius:10px;padding:7px 2px;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:3px}.tab span{font-size:19px}.tab.active{background:#2a2b27;color:var(--gold2)}.view{display:none}.view.active{display:block}.checkrow{display:flex;align-items:flex-start;gap:10px;background:#202a34;padding:10px;border-radius:11px;margin:7px 0}.checkrow input{accent-color:var(--gold);width:18px;height:18px;margin-top:2px}.checkrow label{flex:1;font-size:13px}.checkrow.done label{text-decoration:line-through;color:#8f9a9f}.pillrow{display:flex;gap:7px;flex-wrap:wrap}.pill{border:1px solid #4b5660;background:#17202a;color:#d8dfe5;border-radius:30px;padding:8px 12px;font-size:12px}.pill.selected{border-color:var(--gold);background:#383225;color:var(--gold2)}.metric{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.metric>div{background:#202a34;border-radius:12px;padding:11px;text-align:center}.metric strong{display:block;font:700 23px Georgia,serif;color:var(--gold2)}.metric small{font-size:10px;color:var(--muted)}.history-item{border-left:2px solid #a98e5b;padding:2px 0 12px 13px;margin-left:5px}.history-item b{color:var(--gold2)}.empty{padding:24px;text-align:center;color:var(--muted);border:1px dashed #4b5660;border-radius:14px}.notice{border-left:3px solid var(--gold);padding:10px 12px;background:#28251e;border-radius:8px;color:#d6c9aa;font-size:12px}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.chart{display:flex;align-items:end;gap:8px;height:130px;padding:12px 5px 0;border-bottom:1px solid #46515c}.barwrap{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:end;height:100%;gap:5px}.bar{width:min(35px,75%);min-height:3px;background:linear-gradient(#e8d29d,#9b804d);border-radius:6px 6px 0 0}.barwrap small{font-size:9px;color:var(--muted);white-space:nowrap}.barwrap b{font-size:10px;color:var(--gold2)}.hidden{display:none!important}.footer{text-align:center;color:#75818d;font-size:10px;padding:22px 0 8px}.toast{position:fixed;z-index:50;bottom:90px;left:50%;transform:translateX(-50%);background:#e5d3a8;color:#17140d;padding:10px 16px;border-radius:30px;font-weight:700;font-size:12px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}
+@media(max-width:650px){.shell{padding:12px}.hero{grid-template-columns:1fr}.hero-main{min-height:165px}.hero-side{display:grid;grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.top{align-items:flex-start}.brand h1{font-size:20px}.top-actions .btn{padding:8px 9px;font-size:12px}.section-head{margin-top:19px}.card{padding:14px}}
+@media(min-width:800px){.shell{padding:24px}.grid{grid-template-columns:repeat(4,minmax(0,1fr))}.quad p{min-height:55px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top">
+ <div class="brand"><div class="crest">♜</div><div><h1>HUMAN 3.0</h1><small>PERSONAL DEVELOPMENT OS</small></div></div>
+ <div class="top-actions"><button class="btn small ghost" id="exportBtn">Export</button><button class="btn small" id="installBtn" hidden>Install app</button></div>
+</header>
+
+<main>
+<section id="dashboard" class="view active">
+ <div class="hero">
+  <div class="card hero-main"><div class="eyebrow">Overall development index</div><div class="score" id="overallScore">71%</div><div class="progress" style="width:85%"><span id="overallBar" style="width:71%"></span></div><p class="subtle" style="font-size:11px;margin:10px 0 0">Your four-quadrant self-assessment · updated live</p></div>
+  <div class="card hero-side"><div class="statline"><span>Strongest quadrant</span><b id="strongest">Mind</b></div><div class="statline"><span>Growth opportunity</span><b id="weakest">Spirit</b></div><div class="statline"><span>Daily practices</span><b id="dailyProgress">0 / 4</b></div><div class="statline"><span>Current focus</span><b id="focusSummary">Spirit</b></div><button class="btn primary" data-go="assessment">Run assessment →</button></div>
+ </div>
+ <div class="section-head"><div><h2>The four quadrants</h2><p>Four dimensions, one integrated life.</p></div><span class="tag">LIVE PROFILE</span></div>
+ <div class="grid" id="quadrantCards"></div>
+ <div class="section-head"><div><h2>Today's practices</h2><p>Small deliberate actions compound.</p></div><button class="btn small ghost" data-go="habits">View tracker</button></div>
+ <div class="panel"><div id="dashboardHabits"></div></div>
+ <div class="section-head"><div><h2>Current mission</h2><p>Your active development constraint.</p></div></div>
+ <div class="panel" id="missionCard"></div>
+ <div class="notice">Scores are reflective estimates, not clinical, scientific or official Dan Koe measurements. Use them to guide inquiry, not to rank your worth.</div>
+</section>
+
+<section id="assessment" class="view">
+ <div class="section-head"><div><h2>Quadrant assessment</h2><p>Rate your current reality, not your ideal self.</p></div></div>
+ <div class="notice">This practical self-assessment is an original companion tool inspired by the Human 3.0 framework. It is not an official or validated Dan Koe assessment.</div>
+ <div id="assessmentForms"></div>
+ <div class="panel"><h3>Metatype snapshot</h3><p class="subtle" style="font-size:12px">Your metatype is a working description of how your quadrants interact, not a fixed identity.</p><div id="metatypeResult"></div><div class="actions"><button class="btn primary" id="saveAssessment">Save assessment snapshot</button><button class="btn ghost" id="aiPrompt">Create AI review prompt</button></div></div>
+</section>
+
+<section id="mission" class="view">
+ <div class="section-head"><div><h2>Mission control</h2><p>Find the constraint. Choose the leverage point. Execute.</p></div></div>
+ <div class="panel">
+  <h3>Quarterly development mission</h3>
+  <div class="formgrid">
+   <div class="field"><label for="focus">Primary focus quadrant</label><select id="focus"><option>Mind</option><option>Body</option><option>Spirit</option><option>Vocation</option></select></div>
+   <div class="field"><label for="horizon">Planning horizon</label><select id="horizon"><option>30 days</option><option selected>90 days</option><option>365 days</option></select></div>
+  </div>
+  <div class="field" style="margin-top:12px"><label for="constraint">What is the recurring problem or bottleneck?</label><textarea id="constraint" placeholder="Name the pattern that keeps producing unwanted results..."></textarea></div>
+  <div class="field" style="margin-top:12px"><label for="missionGoal">What outcome would meaningfully improve this?</label><textarea id="missionGoal" placeholder="Describe a concrete result..."></textarea></div>
+  <div class="field" style="margin-top:12px"><label for="nextAction">Next physical action</label><input id="nextAction" type="text" placeholder="A specific action you can take within 24 hours"></div>
+  <div class="field" style="margin-top:12px"><label for="reviewDate">Review date</label><input id="reviewDate" type="date"></div>
+  <div class="actions"><button class="btn primary" id="saveMission">Save mission</button><button class="btn ghost" id="missionPrompt">Generate AI planning prompt</button></div>
+ </div>
+ <div class="panel"><h3>Mission principles</h3><ul class="subtle" style="font-size:13px;padding-left:19px"><li>Choose the constraint with the greatest cross-quadrant impact.</li><li>Define a measurable outcome and a next action.</li><li>Build a repeatable system instead of relying on motivation.</li><li>Review weekly and change the strategy when evidence changes.</li></ul></div>
+ <div id="missionDisplay"></div>
+</section>
+
+<section id="habits" class="view">
+ <div class="section-head"><div><h2>Daily practice tracker</h2><p>Track consistency without turning life into a spreadsheet.</p></div><span class="tag" id="todayLabel"></span></div>
+ <div class="panel"><div class="metric"><div><strong id="todayCount">0/4</strong><small>Today</small></div><div><strong id="streakCount">0</strong><small>Best streak</small></div><div><strong id="weekCount">0%</strong><small>7-day completion</small></div></div><div id="habitList" style="margin-top:13px"></div><div class="actions"><button class="btn ghost" id="resetHabits">Reset today's checks</button></div></div>
+ <div class="panel"><h3>Practice design</h3><p class="subtle" style="font-size:12px">Edit the practices so they reflect actions you can actually repeat.</p><div id="habitEditors"></div><button class="btn primary" id="saveHabits">Save practice names</button></div>
+</section>
+
+<section id="journal" class="view">
+ <div class="section-head"><div><h2>Reflection & review</h2><p>Turn experience into useful information.</p></div></div>
+ <div class="panel">
+  <h3>Daily reflection</h3><div class="field"><label for="journalDate">Date</label><input id="journalDate" type="date"></div>
+  <div class="field" style="margin-top:10px"><label for="journalWin">What went well?</label><textarea id="journalWin" placeholder="Evidence of progress..."></textarea></div>
+  <div class="field" style="margin-top:10px"><label for="journalLearn">What did I learn or notice?</label><textarea id="journalLearn" placeholder="Patterns, assumptions, friction..."></textarea></div>
+  <div class="field" style="margin-top:10px"><label for="journalImprove">What will I adjust tomorrow?</label><textarea id="journalImprove" placeholder="One small correction..."></textarea></div>
+  <div class="actions"><button class="btn primary" id="saveJournal">Save reflection</button><button class="btn ghost" id="journalPrompt">Create AI reflection prompt</button></div>
+ </div>
+ <div class="panel"><h3>Past reflections</h3><div id="journalHistory"></div></div>
+</section>
+
+<section id="progress" class="view">
+ <div class="section-head"><div><h2>Progress & history</h2><p>Compare your development snapshots over time.</p></div></div>
+ <div class="panel"><h3>Quadrant trend</h3><p class="subtle" style="font-size:12px">Save an assessment snapshot periodically to build your chart.</p><div id="trendChart"></div></div>
+ <div class="panel"><h3>Assessment history</h3><div id="assessmentHistory"></div></div>
+ <div class="panel"><h3>30 / 90 / 365-day review</h3><div class="pillrow"><button class="pill selected" data-period="30">30 days</button><button class="pill" data-period="90">90 days</button><button class="pill" data-period="365">365 days</button></div><div id="periodReview" style="margin-top:13px"></div></div>
+ <div class="panel"><h3>Data portability</h3><p class="subtle" style="font-size:12px">Your information is stored on this device/browser. Export a backup before clearing browser data or changing phones.</p><div class="actions"><button class="btn primary" id="exportBtn2">Export backup</button><label class="btn ghost" for="importFile">Import backup</label><input id="importFile" type="file" accept="application/json" hidden></div></div>
+</section>
+
+<section id="settings" class="view">
+ <div class="section-head"><div><h2>Settings & framework</h2><p>Make the system fit your life.</p></div></div>
+ <div class="panel"><h3>Profile</h3><div class="field"><label for="profileName">Display name</label><input id="profileName" type="text" placeholder="Your name or alias"></div><div class="field" style="margin-top:10px"><label for="vision">Long-term vision</label><textarea id="vision" placeholder="What does a deeply integrated life look like?"></textarea></div><button class="btn primary" id="saveProfile" style="margin-top:12px">Save profile</button></div>
+ <div class="panel"><h3>The three developmental levels</h3><div class="history-item"><b>1.0 · Conformist</b><div class="subtle">Leans on inherited beliefs, external authority and established scripts.</div></div><div class="history-item"><b>2.0 · Individualist</b><div class="subtle">Questions conventions, develops agency and creates a personal path.</div></div><div class="history-item"><b>3.0 · Synthesist</b><div class="subtle">Integrates perspectives, recognizes context and creates new frameworks.</div></div><p class="subtle" style="font-size:11px">These are simplified descriptions of the framework. People may show different orientations in different quadrants and contexts.</p></div>
+ <div class="panel"><h3>Development cycle</h3><div class="history-item"><b>Dissonance</b><div class="subtle">Your current approach no longer works.</div></div><div class="history-item"><b>Uncertainty</b><div class="subtle">You explore unfamiliar approaches and navigate ambiguity.</div></div><div class="history-item"><b>Discovery</b><div class="subtle">You find useful knowledge, skills and practices.</div></div><p class="subtle" style="font-size:12px">Channels describe periods of concentrated development. Glitches can accelerate change but may carry risks. Neither is a shortcut or a substitute for integration.</p></div>
+ <div class="panel"><h3>Privacy & reset</h3><p class="subtle" style="font-size:12px">This app does not send your journal, scores or profile to a server. Data remains in your browser's local storage unless you export or share it yourself.</p><button class="btn danger" id="clearData">Delete all local app data</button></div>
+</section>
+</main>
+<div class="footer">HUMAN 3.0 · A PRACTICE OF INTEGRATION · NOT AN OFFICIAL DAN KOE PRODUCT</div>
+</div>
+<nav class="tabs"><div class="tabs-inner">
+ <button class="tab active" data-tab="dashboard"><span>◈</span>Home</button>
+ <button class="tab" data-tab="assessment"><span>◎</span>Assess</button>
+ <button class="tab" data-tab="mission"><span>⚑</span>Mission</button>
+ <button class="tab" data-tab="habits"><span>✓</span>Habits</button>
+ <button class="tab" data-tab="journal"><span>✎</span>Reflect</button>
+ <button class="tab" data-tab="progress"><span>▥</span>Progress</button>
+ <button class="tab" data-tab="settings"><span>⚙</span>Settings</button>
+</div></nav>
+<div class="toast" id="toast"></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const today=()=>new Date().toISOString().slice(0,10);
+const quadrants=[
+ {id:'mind',name:'Mind',icon:'◉',color:'#8bb9a4',desc:'Thoughts, beliefs, awareness and emotional intelligence',questions:['I can notice my thoughts without automatically believing them.','I can change my mind when evidence challenges my assumptions.','I can focus deeply on important work.','I understand my emotional patterns and triggers.','I regularly learn, synthesize and apply useful ideas.'],levels:['1.0 Conformist','2.0 Individualist','3.0 Synthesist']},
+ {id:'body',name:'Body',icon:'✥',color:'#83adc2',desc:'Health, fitness, energy, habits and physical presence',questions:['My sleep and recovery habits support my daily life.','I move my body consistently in ways I can sustain.','My nutrition supports stable energy and health.','I notice physical signals and respond appropriately.','My routines make healthy choices easier.'],levels:['1.0 Conformist','2.0 Individualist','3.0 Synthesist']},
+ {id:'spirit',name:'Spirit',icon:'♡',color:'#c18ca8',desc:'Relationships, meaning, values and community',questions:['I have relationships where honesty and mutual care are present.','My actions generally align with my stated values.','I feel connected to something beyond short-term self-interest.','I can understand perspectives different from my own.','I contribute to people or communities in meaningful ways.'],levels:['1.0 Conformist','2.0 Individualist','3.0 Synthesist']},
+ {id:'vocation',name:'Vocation',icon:'⌁',color:'#c8a56c',desc:'Career, entrepreneurship, systems and contribution',questions:['I create value that meaningfully helps other people.','I have a clear direction for my work or contribution.','I consistently execute on important priorities.','My skills and systems are improving over time.','My work and financial choices support the life I want.'],levels:['1.0 Conformist','2.0 Individualist','3.0 Synthesist']}
+];
+const defaultState={
+ profile:{name:'',vision:''},scores:{mind:78,body:72,spirit:65,vocation:70},
+ levels:{mind:'2.0 Individualist',body:'2.0 Individualist',spirit:'2.0 Individualist',vocation:'2.0 Individualist'},
+ answers:{},mission:{focus:'Spirit',horizon:'90 days',constraint:'',goal:'',action:'',reviewDate:''},
+ habits:['Learn, reflect or journal','Move, train or recover','Connect, contribute or practice gratitude','Create value or advance meaningful work'],
+ habitLog:{},journals:[],snapshots:[],updated:today()
+};
+let state=load();
+function load(){try{return {...structuredClone(defaultState),...JSON.parse(localStorage.getItem('human30'))}}catch(e){return structuredClone(defaultState)}}
+function persist(){state.updated=today();localStorage.setItem('human30',JSON.stringify(state));renderAll()}
+function toast(t){let el=$('#toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1900)}
+function avg(){return Math.round(Object.values(state.scores).reduce((a,b)=>a+b,0)/4)}
+function labelLevel(v){return (v||'2.0 Individualist').split(' ')[0]}
+function todayChecks(){return state.habitLog[today()]||[false,false,false,false]}
+function renderDashboard(){
+ let vals=quadrants.map(q=>({q,v:state.scores[q.id]})).sort((a,b)=>b.v-a.v);
+ $('#overallScore').textContent=avg()+'%';$('#overallBar').style.width=avg()+'%';
+ $('#strongest').textContent=vals[0].q.name;$('#weakest').textContent=vals[3].q.name;
+ $('#dailyProgress').textContent=todayChecks().filter(Boolean).length+' / 4';$('#focusSummary').textContent=state.mission.focus||'Not set';
+ $('#quadrantCards').innerHTML=quadrants.map(q=>`<article class="quad"><div class="quad-head"><div class="qicon" style="color:${q.color}">${q.icon}</div><h3>${q.name}</h3><div class="qscore" style="color:${q.color}">${state.scores[q.id]}%</div></div><p>${q.desc}</p><div class="progress"><span style="width:${state.scores[q.id]}%;background:${q.color}"></span></div><div class="qmeta"><span>${labelLevel(state.levels[q.id])}</span><span>Self-assessed</span></div></article>`).join('');
+ $('#dashboardHabits').innerHTML=state.habits.map((h,i)=>`<div class="checkrow ${todayChecks()[i]?'done':''}"><input type="checkbox" data-habit="${i}" ${todayChecks()[i]?'checked':''}><label>${esc(h)}</label></div>`).join('');
+ $('#missionCard').innerHTML=state.mission.constraint?`<div class="eyebrow">${esc(state.mission.focus)} · ${esc(state.mission.horizon)}</div><h3 style="margin:8px 0">${esc(state.mission.constraint)}</h3><p class="subtle">${esc(state.mission.goal||'No outcome defined yet.')}</p><b style="color:var(--gold2)">Next: ${esc(state.mission.action||'Define a next action')}</b>`:`<p class="subtle">No active mission yet. Set one clear development priority.</p><button class="btn primary" data-go="mission">Create mission</button>`;
+ $$('[data-habit]').forEach(el=>el.addEventListener('change',e=>{let a=todayChecks().slice();a[+e.target.dataset.habit]=e.target.checked;state.habitLog[today()]=a;persist()}));
+ $$('[data-go]').forEach(el=>el.onclick=()=>go(el.dataset.go));
+}
+function renderAssessment(){
+ $('#assessmentForms').innerHTML=quadrants.map(q=>`<div class="panel"><div class="quad-head"><div class="qicon">${q.icon}</div><h3>${q.name}</h3><span class="qscore" id="${q.id}Score">${state.scores[q.id]}%</span></div><p class="subtle" style="font-size:12px">${q.desc}</p>${q.questions.map((question,i)=>{let val=(state.answers[q.id]||Array(5).fill(Math.max(1,Math.min(5,Math.round(state.scores[q.id]/20)))))[i];return `<div style="margin:14px 0"><div style="font-size:13px">${i+1}. ${question}</div><div class="range-row"><input type="range" min="1" max="5" value="${val}" data-q="${q.id}" data-i="${i}"><output>${val}/5</output></div></div>`}).join('')}<div class="formgrid"><div class="field"><label>Developmental orientation</label><select data-level="${q.id}">${q.levels.map(l=>`<option ${state.levels[q.id]===l?'selected':''}>${l}</option>`).join('')}</select></div><div class="field"><label>Current growth phase</label><select data-phase="${q.id}"><option>Dissonance</option><option>Uncertainty</option><option>Discovery</option></select></div></div></div>`).join('');
+ $$('[data-q]').forEach(el=>el.addEventListener('input',()=>{el.nextElementSibling.value=el.value+'/5';let q=el.dataset.q,inputs=$$(`[data-q="${q}"]`),score=Math.round(inputs.reduce((a,x)=>a+(+x.value),0)/25*100);$('#'+q+'Score').textContent=score+'%'}));
+ $$('[data-level]').forEach(el=>el.addEventListener('change',()=>state.levels[el.dataset.level]=el.value));
+ $('#metatypeResult').innerHTML=metatypeHTML();
+}
+function metatypeHTML(){let levels=Object.values(state.levels).map(labelLevel),n3=levels.filter(x=>x==='3.0').length,n2=levels.filter(x=>x==='2.0').length;let archetype=n3>=3?'Integrator':n2>=3?'Explorer':'Developing Generalist';let mix=quadrants.map(q=>`${q.name}: ${labelLevel(state.levels[q.id])}`).join(' · ');return `<div style="font:700 22px Georgia,serif;color:var(--gold2)">${archetype}</div><p class="subtle" style="font-size:12px">${mix}</p><p style="font-size:12px">This descriptive label is generated from your selected quadrant orientations. It is not a formal diagnosis or a validated archetype test.</p>`}
+function saveAssessment(){quadrants.forEach(q=>{let a=$$(`[data-q="${q.id}"]`).map(x=>+x.value);state.answers[q.id]=a;state.scores[q.id]=Math.round(a.reduce((x,y)=>x+y,0)/25*100);let l=$(`[data-level="${q.id}"]`);if(l)state.levels[q.id]=l.value});state.snapshots.push({date:today(),scores:{...state.scores},levels:{...state.levels},overall:avg()});persist();toast('Assessment snapshot saved')}
+function renderHabits(){
+ $('#todayLabel').textContent=today();let checks=todayChecks();$('#todayCount').textContent=checks.filter(Boolean).length+'/4';
+ let dates=Object.keys(state.habitLog).sort().slice(-7),total=dates.reduce((a,d)=>a+(state.habitLog[d]||[]).filter(Boolean).length,0);$('#weekCount').textContent=Math.round(total/(Math.max(1,dates.length)*4)*100)+'%';
+ let streak=0,d=new Date();for(let i=0;i<365;i++){let k=d.toISOString().slice(0,10),a=state.habitLog[k]||[];if(a.length&&a.every(Boolean)){streak++;d.setDate(d.getDate()-1)}else if(i===0&&a.length){break}else break}$('#streakCount').textContent=streak;
+ $('#habitList').innerHTML=state.habits.map((h,i)=>`<div class="checkrow ${checks[i]?'done':''}"><input type="checkbox" data-habit="${i}" ${checks[i]?'checked':''}><label>${esc(h)}</label></div>`).join('');
+ $('#habitEditors').innerHTML=state.habits.map((h,i)=>`<div class="field" style="margin:9px 0"><label>Practice ${i+1}</label><input type="text" data-habit-name="${i}" value="${escAttr(h)}"></div>`).join('');
+ $$('[data-habit]').forEach(el=>el.addEventListener('change',e=>{let a=todayChecks().slice();a[+e.target.dataset.habit]=e.target.checked;state.habitLog[today()]=a;persist()}));
+}
+function renderMission(){let m=state.mission;$('#focus').value=m.focus;$('#horizon').value=m.horizon;$('#constraint').value=m.constraint;$('#missionGoal').value=m.goal;$('#nextAction').value=m.action;$('#reviewDate').value=m.reviewDate;$('#missionDisplay').innerHTML=m.constraint?`<div class="panel"><h3>Saved mission</h3><p><b>${esc(m.focus)} · ${esc(m.horizon)}</b></p><p>${esc(m.constraint)}</p><p>${esc(m.goal)}</p><p class="subtle">Next action: ${esc(m.action)} ${m.reviewDate?'· Review '+esc(m.reviewDate):''}</p></div>`:''}
+function renderJournal(){ $('#journalDate').value=today();$('#journalHistory').innerHTML=state.journals.length?state.journals.slice().reverse().map(j=>`<div class="history-item"><b>${esc(j.date)}</b><p class="subtle" style="font-size:12px">${esc(j.win||'')}${j.learn?' · '+esc(j.learn):''}${j.improve?' · Next: '+esc(j.improve):''}</p></div>`).join(''):'<div class="empty">Your reflections will appear here.</div>'}
+function renderProgress(){let snaps=state.snapshots.slice(-8);$('#trendChart').innerHTML=snaps.length?`<div class="chart">${snaps.map(s=>`<div class="barwrap"><b>${s.overall}%</b><div class="bar" style="height:${s.overall}%"></div><small>${s.date.slice(5)}</small></div>`).join('')}</div>`:'<div class="empty">No snapshots yet. Complete and save an assessment to begin your trendline.</div>';$('#assessmentHistory').innerHTML=state.snapshots.length?state.snapshots.slice().reverse().map(s=>`<div class="history-item"><b>${s.date} · ${s.overall}% overall</b><div class="subtle" style="font-size:12px">${quadrants.map(q=>q.name+' '+s.scores[q.id]+'%').join(' · ')}</div></div>`).join(''):'<div class="empty">No saved assessments yet.</div>';renderPeriod(30)}
+let selectedPeriod=30;
+function renderPeriod(days){selectedPeriod=days;$$('[data-period]').forEach(b=>b.classList.toggle('selected',+b.dataset.period===days));let since=new Date();since.setDate(since.getDate()-days);let old=state.snapshots.filter(s=>new Date(s.date)>=since);let journals=state.journals.filter(j=>new Date(j.date)>=since);$('#periodReview').innerHTML=`<div class="metric"><div><strong>${old.length}</strong><small>Assessment snapshots</small></div><div><strong>${journals.length}</strong><small>Reflections</small></div><div><strong>${Object.keys(state.habitLog).filter(d=>new Date(d)>=since).length}</strong><small>Practice days logged</small></div></div><p class="subtle" style="font-size:12px;margin-top:12px">${old.length>=2?'Change in overall score: '+(old[old.length-1].overall-old[0].overall>0?'+':'')+(old[old.length-1].overall-old[0].overall)+' points.':'Save at least two assessments in this period to compare score changes.'}</p>`}
+function renderSettings(){$('#profileName').value=state.profile.name||'';$('#vision').value=state.profile.vision||''}
+function renderAll(){renderDashboard();renderAssessment();renderHabits();renderMission();renderJournal();renderProgress();renderSettings()}
+function go(id){$$('.view').forEach(v=>v.classList.toggle('active',v.id===id));$$('.tab').forEach(t=>t.classList.toggle('active',t.dataset.tab===id));if(!['dashboard','assessment','mission','habits','journal'].includes(id)){$$('.tab').forEach(t=>t.classList.remove('active'))}window.scrollTo({top:0,behavior:'smooth'});if(id==='progress')renderProgress()}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function escAttr(s=''){return esc(s)}
+$$('[data-tab]').forEach(t=>t.addEventListener('click',()=>go(t.dataset.tab)));
+$$('[data-go]').forEach(t=>t.addEventListener('click',()=>go(t.dataset.go)));
+$('#saveAssessment').onclick=saveAssessment;
+$('#saveMission').onclick=()=>{state.mission={focus:$('#focus').value,horizon:$('#horizon').value,constraint:$('#constraint').value,goal:$('#missionGoal').value,action:$('#nextAction').value,reviewDate:$('#reviewDate').value};persist();toast('Mission saved')};
+$('#saveHabits').onclick=()=>{state.habits=$$('[data-habit-name]').map(x=>x.value.trim()||'Practice');persist();toast('Practices saved')};
+$('#resetHabits').onclick=()=>{state.habitLog[today()]=[false,false,false,false];persist();toast('Today reset')};
+$('#saveJournal').onclick=()=>{let j={date:$('#journalDate').value||today(),win:$('#journalWin').value,learn:$('#journalLearn').value,improve:$('#journalImprove').value};state.journals=state.journals.filter(x=>x.date!==j.date);state.journals.push(j);persist();toast('Reflection saved')};
+$('#saveProfile').onclick=()=>{state.profile={name:$('#profileName').value,vision:$('#vision').value};persist();toast('Profile saved')};
+$$('[data-period]').forEach(b=>b.onclick=()=>renderPeriod(+b.dataset.period));
+function aiPrompt(kind){let base=`You are helping me conduct a thoughtful personal development review using the Human 3.0 framework as a lens. Do not pretend this is a validated psychometric instrument. Be candid, nuanced and practical. Identify assumptions and ask clarifying questions when needed.\n\nMy quadrant scores: ${JSON.stringify(state.scores)}\nMy developmental orientations: ${JSON.stringify(state.levels)}\nMy current mission: ${JSON.stringify(state.mission)}\nMy long-term vision: ${state.profile.vision}\nRecent reflections: ${JSON.stringify(state.journals.slice(-5))}\n\n`;let prompts={assessment:'Analyze my four-quadrant profile. Identify likely imbalances, cross-quadrant dependencies, strengths, blind spots and the 1-2 highest-leverage questions I should investigate. Avoid treating scores as objective facts.',mission:'Help me turn this mission into a realistic 90-day plan with milestones, weekly review questions, leading indicators, risks and a first action. Look for leverage across quadrants.',journal:'Help me extract patterns from these reflections. Separate observations from interpretations, identify recurring friction and suggest one small experiment for tomorrow.'};return base+prompts[kind]}
+function copyPrompt(kind){let p=aiPrompt(kind);if(navigator.clipboard?.writeText){navigator.clipboard.writeText(p).then(()=>toast('AI review prompt copied')).catch(()=>prompt('Copy this prompt:',p))}else prompt('Copy this prompt:',p)}
+$('#aiPrompt').onclick=()=>copyPrompt('assessment');$('#missionPrompt').onclick=()=>copyPrompt('mission');$('#journalPrompt').onclick=()=>copyPrompt('journal');
+function exportData(){let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='human30-backup-'+today()+'.json';a.click();URL.revokeObjectURL(url);toast('Backup exported')}
+$('#exportBtn').onclick=exportData;$('#exportBtn2').onclick=exportData;
+$('#importFile').onchange=async e=>{let f=e.target.files[0];if(!f)return;try{let d=JSON.parse(await f.text());if(!d.scores||!d.habits)throw Error();state={...structuredClone(defaultState),...d};persist();toast('Backup imported')}catch(err){alert('That file does not look like a Human 3.0 backup.')}e.target.value=''};
+$('#clearData').onclick=()=>{if(confirm('Permanently delete all Human 3.0 data stored in this browser? Export a backup first if you may want it later.')){localStorage.removeItem('human30');state=structuredClone(defaultState);persist();toast('Local data deleted')}};
+$('#exportBtn2').onclick=exportData;
+renderAll();
+let deferredInstall=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstall=e;$('#installBtn').hidden=false});
+$('#installBtn').onclick=async()=>{if(!deferredInstall)return;deferredInstall.prompt();await deferredInstall.userChoice;deferredInstall=null;$('#installBtn').hidden=true};
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+</body></html>
